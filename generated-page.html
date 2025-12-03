@@ -1,0 +1,411 @@
+<html lang="en" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGenixx | Build. Transform. Elevate.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9B6BFF; 
+        }
+
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glow Utilities */
+        .purple-glow {
+            box-shadow: 0 0 40px -10px rgba(155, 107, 255, 0.3);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(155, 107, 255, 0.5);
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #9B6BFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Ambient Background blobs */
+        .ambient-blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.4;
+            animation: pulse 10s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(1.2); opacity: 0.5; }
+        }
+    </style>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+<body class="antialiased selection:bg-[#9B6BFF] selection:text-white">
+
+    <!-- Ambient Background Elements -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div class="ambient-blob bg-[#9B6BFF] w-96 h-96 rounded-full -top-20 -left-20 mix-blend-screen"></div>
+        <div class="ambient-blob bg-[#9B6BFF] w-[30rem] h-[30rem] rounded-full top-[40%] right-[-10%] mix-blend-screen opacity-20 animation-delay-2000"></div>
+        <div class="ambient-blob bg-indigo-900 w-80 h-80 rounded-full bottom-0 left-[20%] mix-blend-screen opacity-30"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 border-b border-white/5 bg-black/50 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-xl font-semibold tracking-tighter flex items-center gap-2 z-50">
+                <div class="w-8 h-8 bg-gradient-to-tr from-[#9B6BFF] to-indigo-600 rounded-lg flex items-center justify-center">
+                    <span class="font-bold text-white text-sm">W</span>
+                </div>
+                <span class="">Web<span class="text-[#9B6BFF]">Genixx</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <!-- CTA -->
+            <div class="hidden md:flex">
+                <a href="#contact" class="group relative px-5 py-2.5 bg-[#9B6BFF]/10 text-[#9B6BFF] text-sm font-medium rounded-full overflow-hidden border border-[#9B6BFF]/20 hover:border-[#9B6BFF] transition-all duration-300">
+                    <div class="absolute inset-0 w-0 bg-[#9B6BFF] transition-all duration-[250ms] ease-out group-hover:w-full opacity-10"></div>
+                    <span class="relative flex items-center gap-2">
+                        Get Quote <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-white z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" class="lucide lucide-menu w-6 h-6"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8 text-lg font-medium">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+            <button class="mobile-link text-[#9B6BFF]">Get Quote</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden z-10">
+        <div class="container z-10 text-center relative px-6">
+            <!-- Decorative Badge -->
+            <div class="reveal inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8 active">
+                <span class="w-2 h-2 rounded-full bg-[#9B6BFF] animate-pulse"></span>
+                <span class="text-xs font-medium text-gray-300 tracking-wide uppercase">Grow With Us</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="reveal text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-white mb-6 leading-[1.1] active">
+                Build. Transform. <br>
+                <span class="gradient-text">Elevate.</span>
+            </h1>
+
+            <!-- Subheading -->
+            <p class="reveal text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-light leading-relaxed active">
+                WebGenixx helps you grow with powerful website development and stunning frontend design. We craft digital experiences that matter.
+            </p>
+
+            <!-- Buttons -->
+            <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4 active">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-[#9B6BFF] hover:bg-[#8a5ae6] text-white rounded-full font-medium transition-all duration-300 purple-glow hover:scale-105 flex items-center justify-center gap-2">
+                    Get Started <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="zap" class="lucide lucide-zap w-4 h-4"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-full font-medium backdrop-blur-md transition-all duration-300 hover:scale-105">
+                    Contact Now
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Abstract Elements (CSS Only) -->
+        <div class="absolute top-1/4 left-10 w-24 h-24 border border-[#9B6BFF]/20 rounded-full animate-[bounce_6s_infinite] opacity-50 hidden lg:block"></div>
+        <div class="absolute bottom-1/4 right-10 w-16 h-16 border border-white/10 rotate-45 rounded-lg animate-[spin_10s_linear_infinite] opacity-50 hidden lg:block"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="reveal text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Our Expertise</h2>
+                <p class="text-gray-400">Precision engineering for the modern web.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="reveal group p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#9B6BFF]/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(155,107,255,0.15)] relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#9B6BFF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="w-12 h-12 bg-[#9B6BFF]/10 rounded-lg flex items-center justify-center text-[#9B6BFF] mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="code-2" class="lucide lucide-code-2 w-6 h-6"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 tracking-tight">Website Development</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Full-stack solutions built from scratch using modern frameworks. Scalable, secure, and robust architecture.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="reveal group p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#9B6BFF]/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(155,107,255,0.15)] relative overflow-hidden" style="transition-delay: 100ms;">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#9B6BFF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="w-12 h-12 bg-[#9B6BFF]/10 rounded-lg flex items-center justify-center text-[#9B6BFF] mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layers" class="lucide lucide-layers w-6 h-6"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 tracking-tight">Website Redesign</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Transform outdated sites into high-converting digital assets with improved UX/UI and performance.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="reveal group p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#9B6BFF]/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(155,107,255,0.15)] relative overflow-hidden" style="transition-delay: 200ms;">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#9B6BFF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="w-12 h-12 bg-[#9B6BFF]/10 rounded-lg flex items-center justify-center text-[#9B6BFF] mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="monitor" class="lucide lucide-monitor w-6 h-6"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 tracking-tight">Frontend Development</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Pixel-perfect, responsive interfaces with smooth animations that delight users on every device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="border-y bg-black/50 z-10 border-white/5 pt-24 pb-24 relative">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-6">Why web leaders choose <span class="text-[#9B6BFF]">WebGenixx</span></h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        We don't just write code; we build engines for growth. Our approach combines technical excellence with aesthetic precision to deliver products that stand out.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-[#9B6BFF]/10 rounded-md text-[#9B6BFF]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="palette" class="lucide lucide-palette w-5 h-5"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle></svg></div>
+                            <div class="">
+                                <h4 class="font-medium text-white text-sm">Modern UI/UX</h4>
+                                <p class="text-gray-500 text-xs mt-1">Intuitive &amp; Aesthetic</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-[#9B6BFF]/10 rounded-md text-[#9B6BFF]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="zap" class="lucide lucide-zap w-5 h-5"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg></div>
+                            <div>
+                                <h4 class="font-medium text-white text-sm">Fast Delivery</h4>
+                                <p class="text-gray-500 text-xs mt-1">Optimized Workflows</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-[#9B6BFF]/10 rounded-md text-[#9B6BFF]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="coins" class="lucide lucide-coins w-5 h-5"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="M7 6h1v4"></path><path d="m16.71 13.88.7.71-2.82 2.82"></path></svg></div>
+                            <div class="">
+                                <h4 class="font-medium text-white text-sm">Affordable Pricing</h4>
+                                <p class="text-gray-500 text-xs mt-1">Startup Friendly</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-[#9B6BFF]/10 rounded-md text-[#9B6BFF]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="smartphone" class="lucide lucide-smartphone w-5 h-5"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg></div>
+                            <div>
+                                <h4 class="font-medium text-white text-sm">Responsive</h4>
+                                <p class="text-gray-500 text-xs mt-1">Mobile First Design</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-[#9B6BFF]/10 rounded-md text-[#9B6BFF]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" class="lucide lucide-search w-5 h-5"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg></div>
+                            <div>
+                                <h4 class="font-medium text-white text-sm">SEO-Friendly</h4>
+                                <p class="text-gray-500 text-xs mt-1">Rank Higher</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 bg-[#9B6BFF]/10 rounded-md text-[#9B6BFF]"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="terminal" class="lucide lucide-terminal w-5 h-5"><path d="M12 19h8"></path><path d="m4 17 6-6-6-6"></path></svg></div>
+                            <div class="">
+                                <h4 class="font-medium text-white text-sm">Clean Code</h4>
+                                <p class="text-gray-500 text-xs mt-1">Maintainable &amp; Scalable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abstract Visual -->
+                <div class="reveal relative h-full min-h-[400px] flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-[#9B6BFF]/20 to-transparent rounded-2xl blur-2xl"></div>
+                    <div class="relative w-full h-full border border-white/10 bg-black/40 backdrop-blur-xl rounded-2xl p-8 flex flex-col justify-between">
+                        <!-- Code Mockup -->
+                        <div class="space-y-3">
+                            <div class="flex gap-2 mb-4">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="space-y-2 font-mono text-xs md:text-sm text-gray-400">
+                                <p><span class="text-[#9B6BFF]">const</span> webgenixx = {</p>
+                                <p class="pl-4">mission: <span class="text-green-400">'Accelerate Growth'</span>,</p>
+                                <p class="pl-4">quality: <span class="text-blue-400">100</span>,</p>
+                                <p class="pl-4">delivered: <span class="text-[#9B6BFF]">true</span></p>
+                                <p>};</p>
+                                <p class="text-gray-600">// Ready to deploy your vision</p>
+                            </div>
+                        </div>
+                        <div class="mt-8 flex items-center gap-4">
+                             <div class="h-1 flex-1 bg-gray-800 rounded-full overflow-hidden">
+                                 <div class="h-full bg-[#9B6BFF] w-[85%] rounded-full shadow-[0_0_10px_#9B6BFF]"></div>
+                             </div>
+                             <span class="text-xs font-mono text-[#9B6BFF]">OPTIMIZED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative z-10">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <h2 class="reveal text-3xl md:text-4xl font-semibold tracking-tight mb-8">Who We Are</h2>
+            <div class="reveal p-8 md:p-12 rounded-3xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/10 backdrop-blur-sm relative overflow-hidden">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-[#9B6BFF] shadow-[0_0_20px_#9B6BFF]"></div>
+                
+                <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-6">
+                    <span class="text-white font-medium">WebGenixx</span> is a forward-thinking web development agency dedicated to transforming ideas into digital reality. 
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    We specialize in bridging the gap between design and functionality. Whether you are a startup looking for your first landing page or an established business needing a complete overhaul, we provide the technical expertise and creative vision to help you stand out in a crowded digital space.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative z-10 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto">
+                <div class="reveal text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Let's Build Something Great</h2>
+                    <p class="text-gray-400">Fill out the form below and we'll get back to you within 24 hours.</p>
+                </div>
+
+                <form class="reveal space-y-6 bg-white/[0.02] p-8 md:p-10 rounded-2xl border border-white/10 backdrop-blur-md relative">
+                    <!-- Glow effect behind form -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-[#9B6BFF] to-indigo-600 rounded-2xl opacity-20 blur-lg -z-10"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-medium text-gray-400 uppercase tracking-wider">Name</label>
+                            <input type="text" placeholder="John Doe" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-[#9B6BFF] focus:ring-1 focus:ring-[#9B6BFF] transition-all">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-medium text-gray-400 uppercase tracking-wider">Email</label>
+                            <input type="email" placeholder="john@example.com" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-[#9B6BFF] focus:ring-1 focus:ring-[#9B6BFF] transition-all">
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="text-xs font-medium text-gray-400 uppercase tracking-wider">Message</label>
+                        <textarea rows="4" placeholder="Tell us about your project..." class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-[#9B6BFF] focus:ring-1 focus:ring-[#9B6BFF] transition-all resize-none"></textarea>
+                    </div>
+
+                    <button type="button" class="w-full py-4 bg-gradient-to-r from-[#9B6BFF] to-indigo-600 rounded-lg text-white font-medium hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(155,107,255,0.3)] flex items-center justify-center gap-2 group">
+                        Send Message 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="send" class="lucide lucide-send w-4 h-4 group-hover:translate-x-1 transition-transform"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10 bg-black relative z-10">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col items-center md:items-start">
+                 <a href="#" class="flex items-center gap-2 text-lg font-semibold tracking-tight mb-2">WebGenixx<div class="w-6 h-6 bg-[#9B6BFF] rounded text-white flex items-center justify-center text-xs font-bold">W</div></a>
+                <p class="text-xs text-gray-500" style="">© 2025 WebGenixx. All rights reserved.</p>
+            </div>
+
+            <div class="flex gap-6">
+                <a href="#" class="text-gray-400 hover:text-[#9B6BFF] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="twitter" class="lucide lucide-twitter w-5 h-5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                <a href="#" class="text-gray-400 hover:text-[#9B6BFF] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="instagram" class="lucide lucide-instagram w-5 h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+                <a href="#" class="text-gray-400 hover:text-[#9B6BFF] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="linkedin" class="lucide lucide-linkedin w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                <a href="#" class="text-gray-400 hover:text-[#9B6BFF] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="github" class="lucide lucide-github w-5 h-5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+
+            revealElements.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Trigger once on load
+        revealOnScroll();
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    </script>
+
+</body></html>
